@@ -1,21 +1,22 @@
-nvm="$HOME/.nvm"
+NVM_SOURCE=~/.nvm/nvm.sh
 
-if [ -d $nvm ]; then
-  export NVM_DIR=$nvm
-  if [ -s "$NVM_DIR/nvm.sh" ]; then
-    . "$NVM_DIR/nvm.sh" # This loads nvm
-    
-    # place this after nvm initialization!
-    autoload -U add-zsh-hook
-    load-nvmrc() {
-      if [[ -f .nvmrc && -r .nvmrc ]]; then
-        nvm use
-      elif [[ $(nvm version) != $(nvm version default)  ]]; then
-        echo "Reverting to nvm default version"
-        nvm use default
-      fi
-    }
-    add-zsh-hook chpwd load-nvmrc
-    load-nvmrc
-  fi
+lazy_source () {
+  eval "$1 () { [ -f $2 ] && source $2 && $1 \$@ }"
+}
+
+if [ -s $NVM_SOURCE ]; then
+  lazy_source nvm $NVM_SOURCE
+
+  function node {
+    NODE_PATH="$(dirname `nvm which default`)"
+    export PATH=$NODE_PATH:$PATH
+    unset -f node
+    node $@
+  }
+
+  # clis that depend on nvm being active
+  clis=(npm)
+  for cli in ${clis[@]}; do
+    alias $cli="node --version >/dev/null; $cli $@"
+  done
 fi
