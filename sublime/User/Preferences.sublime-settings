@@ -20,7 +20,6 @@
   ],
   "bold_folder_labels": true,
   "color_scheme": "Packages/RailsCasts Colour Scheme/RailsCastsColorScheme.tmTheme",
-  "drawWhiteSpace": true,
   "draw_white_space": "all",
   "enable_tab_scrolling": false,
   "ensure_newline_at_eof_on_save": true,
@@ -72,9 +71,9 @@
   "index_files": true,
   "line_padding_bottom": 1,
   "line_padding_top": 1,
-  "matchBracketsAngle": true,
-  "matchBracketsBraces": true,
-  "matchBracketsSquare": true,
+  "match_brackets_angle": true,
+  "match_brackets_braces": true,
+  "match_brackets_square": true,
   "rulers": [
     80
   ],
