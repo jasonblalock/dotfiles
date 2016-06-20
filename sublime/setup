@@ -14,6 +14,14 @@ if [ ! -d "$sublime_dir" ]; then
   mkdir -p "$HOME/.config/sublime-text-3/Packages/User"
 fi
 
+if [ ! -d "$HOME/.config/sublime-text-3/Packages/Installed Packages" ]
+  mkdir -p "$HOME/.config/sublime-text-3/Packages/Installed Packages"
+fi
+
+if [ ! -f "$HOME/.config/sublime-text-3/Packages/Installed Packages/Package Control.sublime-package" ]
+  cp "$ZSH/sublime/Installed Packages/Package Control.sublime-package" "$HOME/.config/sublime-text-3/Packages/Installed Packages/Package Control.sublime-package"
+fi
+
 # symlink user settings
 for file in $ZSH/sublime/User/*
 do
