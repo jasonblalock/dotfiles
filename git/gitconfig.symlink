@@ -17,8 +17,7 @@
 [core]
         excludesfile = ~/.gitignore
         editor = vim
-[apply]
-        whitespace = nowarn
+        autocrlf = input
 [mergetool]
         keepBackup = false
 [difftool]
