@@ -14,11 +14,11 @@ if [ ! -d "$sublime_dir" ]; then
   mkdir -p "$HOME/.config/sublime-text-3/Packages/User"
 fi
 
-if [ ! -d "$HOME/.config/sublime-text-3/Packages/Installed Packages" ]
+if [ ! -d "$HOME/.config/sublime-text-3/Packages/Installed Packages" ]; then
   mkdir -p "$HOME/.config/sublime-text-3/Packages/Installed Packages"
 fi
 
-if [ ! -f "$HOME/.config/sublime-text-3/Packages/Installed Packages/Package Control.sublime-package" ]
+if [ ! -f "$HOME/.config/sublime-text-3/Packages/Installed Packages/Package Control.sublime-package" ]; then
   cp "$ZSH/sublime/Installed Packages/Package Control.sublime-package" "$HOME/.config/sublime-text-3/Packages/Installed Packages/Package Control.sublime-package"
 fi
 
