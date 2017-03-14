@@ -8,3 +8,9 @@ then
   alias ll="gls -l --color"
   alias la='gls -A --color'
 fi
+
+if $(xclip &>/dev/null)
+then
+  alias pbcopy="xclip -selection clipboard"
+  alias pbpaste="xclip -selection clipboard -o"
+fi
