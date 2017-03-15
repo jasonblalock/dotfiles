@@ -29,15 +29,8 @@ do
 done
 
 # initialize autocomplete here, otherwise functions won't be loaded
-# On slow systems, checking the cached .zcompdump file to see if it must be 
-# regenerated adds a noticable delay to zsh startup.  This little hack restricts 
-# it to once a day.  It should be pasted into your own completion file.
-autoload -Uz compinit
-if [[ $(date +'%j') > $(date +'%j' -r "${HOME}/.zcompdump") ]]; then
-	compinit;
-else
-	compinit -C;
-fi;
+autoload -U compinit
+compinit
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}
