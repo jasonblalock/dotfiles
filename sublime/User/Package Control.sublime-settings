@@ -3,9 +3,12 @@
   [
     "AdvancedNewFile",
     "All Autocomplete",
+    "Babel",
+    "Elixir",
     "Emmet",
     "Git",
     "Markdown Preview",
+    "Materialize",
     "Origami",
     "Package Control",
     "Pretty JSON",
