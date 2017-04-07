@@ -15,7 +15,7 @@ if [ -s $NVM_SOURCE ]; then
   }
 
   # clis that depend on nvm being active
-  clis=(npm)
+  clis=(npm yarn bundle)
   for cli in ${clis[@]}; do
     alias $cli="node --version >/dev/null; $cli $@"
   done
