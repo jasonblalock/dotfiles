@@ -1,1 +1,1 @@
-export JAVA_HOME=/usr/bin/java
+export JAVA_HOME=$(dirname $(dirname $(readlink $(readlink $(which java)))))
