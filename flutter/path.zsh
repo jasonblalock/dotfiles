@@ -1,3 +1,3 @@
 # https://flutter.dev
 
-export PATH="$HOME/.flutter/bin:$PATH"
+export PATH="$HOME/.flutterio/bin:$PATH"
